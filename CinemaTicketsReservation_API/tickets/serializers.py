@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from tickets.models import Guest, Movie, Reservation
+from tickets.models import Guest, Movie, Reservation, Post
 
 
 class MovieSerializer(serializers.ModelSerializer):
@@ -21,3 +21,9 @@ class GuestSerializer(serializers.ModelSerializer):
         fields = ['pk', 'reservation', 'name', 'mobile']
 
 # uuid slug
+
+
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post
+        fields = '__all__'
